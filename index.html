@@ -9,6 +9,15 @@
 <body>
     <div class="snow-container" aria-hidden="true"></div>
     
+    <!-- Learn More Modal -->
+    <div id="learnMoreModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Why I Want This for Xmas</h2>
+            <p>Why I want this for xmas</p>
+        </div>
+    </div>
+    
     <div class="top-banner">
         <div class="banner-content">
             <p class="banner-text">Razor #1 Xmas Present</p>
@@ -130,7 +139,7 @@
                     </a>
                 </div>
 
-                <!-- Product 9 -->
+                
                 <div class="product-card">
                     <a href="https://www.hotpaxx.com/product-page/72v-24ah-150a-bomb-moto-battery" target="_blank" class="product-link">
                         <div class="product-image">
@@ -143,7 +152,7 @@
                     </a>
                 </div>
 
-                <!-- Product 10 -->
+                
                 <div class="product-card">
                     <a href="https://www.hotpaxx.com/product-page/twist-throttle-wired-for-fardriver" target="_blank" class="product-link">
                         <div class="product-image">
@@ -183,6 +192,25 @@
                 flake.style.animationDelay = `${-Math.random() * duration}s`;
                 
                 container.appendChild(flake);
+            }
+        });
+
+        // Learn More Modal functionality
+        const modal = document.getElementById('learnMoreModal');
+        const learnMoreBtn = document.querySelector('.btn-learn-more-banner');
+        const closeBtn = document.querySelector('.close-btn');
+
+        learnMoreBtn.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
         });
     </script>
