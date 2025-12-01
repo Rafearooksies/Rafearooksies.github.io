@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Top Banner with Learn More Button -->
+    <div class="snow-container" aria-hidden="true"></div>
+    
     <div class="top-banner">
         <div class="banner-content">
             <p class="banner-text">Razor #1 Xmas Present</p>
@@ -25,7 +26,7 @@
     <main>
         <div class="container">
             <div class="products-grid">
-                <!-- Product 1 -->
+                
                 <div class="product-card">
                     <a href="https://www.amazon.com/Razor-Rocket-McGrath-Electric-Motocross/dp/B083G8KNZ5" target="_blank" class="product-link">
                         <div class="product-image">
@@ -38,7 +39,7 @@
                     </a>
                 </div>
 
-                <!-- Product 2 -->
+                
                 <div class="product-card">
                     <a href="https://electroandcompany.com/collections/sx500/products/ec4p-lite-brushless-motor" target="_blank" class="product-link">
                         <div class="product-image">
@@ -51,7 +52,7 @@
                     </a>
                 </div>
 
-                <!-- Product 3 -->
+                
                 <div class="product-card">
                     <a href="https://www.amazon.com/USTPO-Motorcycle-Handlebar-Risers-Universal/dp/B0DMF4HXVM" target="_blank" class="product-link">
                         <div class="product-image">
@@ -64,7 +65,7 @@
                     </a>
                 </div>
 
-                <!-- Product 4 -->
+                
                 <div class="product-card">
                     <a href="https://www.amazon.com/DJ-Motor-Aluminum-Handlebar-Handle-2019-2024/dp/B0CWL793GM" target="_blank" class="product-link">
                         <div class="product-image">
@@ -77,7 +78,7 @@
                     </a>
                 </div>
 
-                <!-- Product 5 -->
+                
                 <div class="product-card">
                     <a href="https://www.midwestminimods.com/products/580mm-fork-kit" target="_blank" class="product-link">
                         <div class="product-image">
@@ -90,7 +91,7 @@
                     </a>
                 </div>
 
-                <!-- Product 6 -->
+                
                 <div class="product-card">
                     <a href="https://www.midwestminimods.com/products/10-inch-street-wheel-spoke-set" target="_blank" class="product-link">
                         <div class="product-image">
@@ -103,7 +104,7 @@
                     </a>
                 </div>
 
-                <!-- Product 7 -->
+                
                 <div class="product-card">
                     <a href="https://www.midwestminimods.com/products/mini-mods-pit-bike-brake-kit" target="_blank" class="product-link">
                         <div class="product-image">
@@ -116,7 +117,7 @@
                     </a>
                 </div>
 
-                <!-- Product 8 -->
+                
                 <div class="product-card">
                     <a href="https://www.hotpaxx.com/product-page/fardriver-nd72450-200a-line-450a-phase" target="_blank" class="product-link">
                         <div class="product-image">
@@ -129,7 +130,7 @@
                     </a>
                 </div>
 
-                <!-- Product 9 -->
+                
                 <div class="product-card">
                     <a href="https://www.hotpaxx.com/product-page/72v-24ah-150a-bomb-moto-battery" target="_blank" class="product-link">
                         <div class="product-image">
@@ -150,5 +151,27 @@
             <p>&copy; 2025 RazorXmasBuild. Made By Rafe.</p>
         </div>
     </footer>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.snow-container');
+            if (!container) return;
+            const flakes = 48;
+            for (let i = 0; i < flakes; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                const size = Math.random() * 8 + 2; // 2 - 10px
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}%`;
+                flake.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
+                const duration = 8 + Math.random() * 12; // 8 - 20s
+                flake.style.animationDuration = `${duration}s`;
+                flake.style.animationDelay = `${-Math.random() * duration}s`;
+                
+                container.appendChild(flake);
+            }
+        });
+    </script>
 </body>
 </html>
