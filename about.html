@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Want This for Xmas - RazorBuild</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .about-content {
+            background: linear-gradient(135deg, rgba(20, 25, 50, 0.95), rgba(30, 40, 70, 0.95));
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(176, 196, 255, 0.15);
+            border: 2px solid rgba(176, 196, 255, 0.2);
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .about-content h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff, #b0c4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(176, 196, 255, 0.15);
+            border: 2px solid rgba(176, 196, 255, 0.4);
+            color: #b0c4ff;
+            font-size: 1em;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .back-btn:hover {
+            background: rgba(176, 196, 255, 0.25);
+            box-shadow: 0 0 20px rgba(176, 196, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="snow-container" aria-hidden="true"></div>
+    
+    <div class="about-container">
+        <div class="about-content">
+            <h1>Why I Want This for Xmas</h1>
+            <p>Why I want this for xmas</p>
+            <a href="index.html" class="back-btn">← Back to Products</a>
+        </div>
+    </div>
+
+    <script>
+        // Generate snowflakes
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.snow-container');
+            if (!container) return;
+            const flakes = 48;
+            for (let i = 0; i < flakes; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                const size = Math.random() * 8 + 2;
+                flake.style.width = `${size}px`;
+                flake.style.height = `${size}px`;
+                flake.style.left = `${Math.random() * 100}%`;
+                flake.style.opacity = (0.6 + Math.random() * 0.4).toFixed(2);
+                const duration = 8 + Math.random() * 12;
+                flake.style.animationDuration = `${duration}s`;
+                flake.style.animationDelay = `${-Math.random() * duration}s`;
+                container.appendChild(flake);
+            }
+        });
+    </script>
+</body>
+</html>
